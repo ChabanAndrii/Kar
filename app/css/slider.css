@@ -1,0 +1,220 @@
+.fade-carousel {
+      position: relative;
+      height: 100vh;
+      padding: 0;
+  }
+  .fade-carousel .carousel-inner .item {
+      height: 100vh;
+  }
+
+  .fade-carousel .carousel-indicators > li {
+      margin: 0 2px;
+      background-color: #f39c12;
+      border-color: #f39c12;
+      opacity: .7;
+  }
+  .fade-carousel .carousel-indicators > li.active {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+
+  .hero {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+        -webkit-transform: translate3d(-50%,-50%,0);
+           -moz-transform: translate3d(-50%,-50%,0);
+            -ms-transform: translate3d(-50%,-50%,0);
+             -o-transform: translate3d(-50%,-50%,0);
+                transform: translate3d(-50%,-50%,0);
+  }
+  .hero h1 {
+      font-size: 6em;    
+      font-family: 'Cormorant Garamond';
+      margin: 0;
+      padding: 0;
+  }
+  .hero h1:before{
+    position: relative;
+    content: "◆";
+    font-size: 32px;
+    padding: 0 10px;
+    top: -17px;
+  }
+  .hero h1:after{
+    position: relative;
+    content: "◆";
+    font-size: 32px;
+    padding: 0 10px;
+    top: -17px;
+  }
+  .fade-carousel .carousel-inner .item .hero {
+      opacity: 0;
+      -webkit-transition: 0.5s all ease-in-out .1s;
+         -moz-transition: 0.5s all ease-in-out .1s; 
+          -ms-transition: 0.5s all ease-in-out .1s; 
+           -o-transition: 0.5s all ease-in-out .1s; 
+              transition: 0.5s all ease-in-out .1s; 
+  }
+  .fade-carousel .carousel-inner .item.active .hero {
+      opacity: 1;
+      -webkit-transition: 0.5s all ease-in-out .1s;
+         -moz-transition: 0.5s all ease-in-out .1s; 
+          -ms-transition: 0.5s all ease-in-out .1s; 
+           -o-transition: 0.5s all ease-in-out .1s; 
+              transition: 0.5s all ease-in-out .1s;    
+  }
+
+        
+
+  .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: rgb(192, 155, 76);
+      opacity: .2;
+  }
+
+     
+
+  .fade-carousel .slides .slide-1, 
+  .fade-carousel .slides .slide-2,
+  .fade-carousel .slides .slide-3 {
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  .fade-carousel .slides .slide-1 {
+    background-image: url(../img/slider_img/arena_lviv.jpg); 
+  }
+  .fade-carousel .slides .slide-2 {
+    background-image: url(../img/slide2.jpg);
+  }
+  .fade-carousel .slides .slide-3 {
+    background-image: url(../img/slide3.jpg);
+  }
+  @media screen and (min-width: 980px){
+      .hero { width: 980px; }    
+  }
+  @media screen and (max-width: 640px){
+      .hero h1 { font-size: 4em; }    
+  }
+
+
+
+
+
+.pre_footer_img{
+    width: 100%;
+    height: 100%;
+    background: url(../img/mmm.JPG) no-repeat;
+    background-size: 100%;
+    z-index: 999;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+.content{
+    margin: 80px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;    
+}
+.content h3{
+    color: #fff;
+    line-height: 1.75;
+    text-align: center;
+}
+ .guotes_1 {
+    z-index: 999;
+    background: url(../img/icons/quotes_2.png);
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain!important;
+    margin: 0 auto;
+    width: 38px;
+    height: 100px;
+}
+ .quotes_2 {
+    z-index: 999;
+    background: url(../img/icons/quotes_1.png);
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain!important;
+    margin: 0 auto;
+    width: 38px;
+    height: 100px;
+}
+ .guotes_1c {
+    z-index: 999;
+    background: url(../img/icons/quotes_2_2.png);
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain!important;
+    margin: 0 auto;
+    width: 38px;
+    height: 100px;
+}
+ .guotes_2c {
+    z-index: 999;
+    background: url(../img/icons/quotes_1_1.png);
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain!important;
+    margin: 0 auto;
+    width: 38px;
+    height: 100px;
+}
+
+
+
+
+
+
+
+.well-none{    margin: 75px 0;}
+#myCarousel .carousel-control{
+    z-index: 9999;
+    background-image: none;
+    background-color: transparent;
+    max-width: 55px;
+    max-height: 55px;
+    top: 34%;
+    margin: 0 -60px;
+}
+#myCarousel .carousel-control .glyphicon{
+    font-size: 35px;
+    top: 10px;
+}
+#myCarousel .carousel-control .glyphicon:hover{
+    color: #c6a55f;
+}
+.thumbnail {
+    height: 200px;
+    position: relative;
+    background-color: #fff;
+}
+.thumbnail img {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }

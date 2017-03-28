@@ -1,0 +1,14 @@
+h1 {
+  font-family: Arial;
+  font-style: 24px;
+  margin: 0;
+}
+
+p {
+  font-style: 12px;
+}
+body {
+  background: #888;
+  margin: 0;
+  padding: 0;
+}

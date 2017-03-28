@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Karkhut</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700,700i" rel="stylesheet">
+    
+    <link href="../www/app/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../www/app/css/bundle.min.css" rel="stylesheet">
+    <link href="../www/app/css/slider.css" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+  <header>
+
+    <div class="header_img_wraper">
+      <!-- HEADER -->
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="logo text-left col-lg- col-md-2 col-xs-2"><a href="index.html"><img src="../www/app/img/logo_gold.png" style="width: 155px;height: 80px;"></a></div>
+              <ul class="lft_bar nav navbar-nav col-lg-8 col-md-8 col-xs-8">
+                <li><a href="">Головна</a></li>
+                <li><a href="">Проектні роботи</a></li>
+                <li><a href="">Наувкові роботи</a></li>
+                <li><a href="">Обстеження</a></li>
+                <li><a href="">Портфоліо</a></li>
+                <li><a href="">Контакти</a></li>
+              </ul>
+            </div>
+        </nav>
+        <div class="contact_nav col-md-12">
+          <div class="container">
+             <ul class="">
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<button id="lviv">click me to show lviv</button>
+                </li>
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<button id="ukr">click me to show ukraine</button>
+                </li>
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<button id="eur">click me to show europe</button>
+                </li>
+              </ul>
+<div id="map_filters">
+<button id="option1">Click to hide</button>
+<button id="option2">Click to hide</button>
+</div>
+          </div>
+        </div>
+        <img src="../www/app/img/header_img_wraper.png" alt="">
+
+      </div>
+  </header>
+<div id="map">
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../www/app/bootstrap/js/bootstrap.min.js"></script>
+<script src="../www/app/js/main.js"></script>
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPhVS8qjz9FhnehXhnvgeOkf1EIocmRM&callback=PortfolioMap"
+async defer></script>
+<script>
+  
+var projectsIcon = {
+ url: '../www/app/img/icons/red.png' 
+};
+var metalIcon = {
+ url: '../www/app/img/icons/green.png' 
+};
+var startLatLng = {
+  lat:49.8428193,
+  lng:24.0324397
+}
+
+var map;
+
+function PortfolioMap() {
+
+  var sinceWork = [
+    ['Памятник Т.Г.Шевченку', 49.841056, 24.028280, projectsIcon],
+
+  ];
+  var metalProjects = [
+    ['Хз що то', 49.841956, 24.028210, metalIcon]
+  ];
+
+
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: startLatLng,
+    scrollwheel: false
+  });
+
+  for (var i = 0; i < metalProjects.length; i++) {
+    var beach = metalProjects[i];
+    var blueMarker = new google.maps.Marker({
+      position: {lat: beach[1], lng: beach[2]},
+      map: map,
+      icon: beach[3]
+    });
+  }
+  for (var i = 0; i < sinceWork.length; i++) {
+  var beach = sinceWork[i];
+  var brownMarker = new google.maps.Marker({
+    position: {lat: beach[1], lng: beach[2]},
+    map: map,
+    icon: beach[3]
+  });
+}
+// blueMarker.setMap(null);
+// }
+var hideMarkers = document.getElementById('option1').onclick = function () {
+    if (blueMarker.getMap() != null) blueMarker.setMap(null);
+    else blueMarker.setMap(map);
+}
+    hideMarkers = document.getElementById('option2').onclick = function () {
+    if (brownMarker.getMap() != null) brownMarker.setMap(null);
+    else brownMarker.setMap(map);
+}
+};
+
+
+
+
+
+
+
+
+
+//geolocation buttons
+  
+function newLocation(newLat, newLng, newZoom) {
+    map.setCenter({
+      lat: newLat,
+      lng: newLng
+    });
+    map.setZoom(newZoom)
+  }
+  var lviv = document.getElementById('lviv').onclick = function () {
+    newLocation(49.8428193,24.0324397, 12);
+  }
+      ukraine = document.getElementById('ukr').onclick = function () {
+    newLocation(49.4826207,32.8137842, 6);
+  }
+      europe = document.getElementById('eur').onclick = function () {
+    newLocation(52.7259578,5.1295939, 4);
+  }
+
+
+</script>
+  </body>
+</html>
